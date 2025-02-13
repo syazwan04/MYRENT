@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">THIS IS HOME PAGE</h1>
+    
+    <div class="user-info mb-4">
+        <p>Current Date: {{ current_date }}</p>
+        <p>Time: {{ current_time }}</p>
+        <p>Hi {{ user.firstName }}</p>
+    </div>
+
+    <h2 class="text-center mb-4">MyRent</h2>
+    <nav class="nav justify-content-center mb-4">
+        <a href="/rent">Rent</a> |
+        <a href="/news">Announcement</a> |
+        <a href="/report">Report</a> |
+        <a href="/faq">FAQ</a>
+    </nav>
+
+    <div class="faq-container border p-4">
+        <h3 class="text-center mb-4">FAQ</h3>
+        <p class="text-center mb-4">Lorem ipsum dolor sit amet et delectus accommodare.</p>
+
+        <div class="accordion" id="faqAccordion">
+            {% for faq in faqs %}
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ faq.id }}">
+                        {{ faq.question }}
+                    </button>
+                </h2>
+                <div id="faq{{ faq.id }}" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        {{ faq.answer }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

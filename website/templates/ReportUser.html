@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">THIS IS REPORT PAGE FOR USER</h1>
+    
+    <div class="row mb-3">
+        <div class="col">
+            <span>Current Date: {{ current_date }}</span>
+            <span class="ms-3">Time: {{ current_time }}</span>
+            <div>Hi {{ user.firstName }}</div>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4">MyRent</h2>
+
+    <footer class="mt-5 text-center">
+    <nav class="nav justify-content-center mb-4">
+        <a href="/rent" class="nav-link">Rent</a>
+        <a href="/news" class="nav-link">Announcement</a>
+        <a href="/report" class="nav-link">Report</a>
+        <a href="/faq" class="nav-link">FAQ</a>
+    </nav>
+    </footer>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="mb-4">Complaint</h3>
+            <form method="POST">
+                <div class="mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Request:</label>
+                    <textarea name="request" class="form-control" rows="4"></textarea>
+                </div>
+                <div class="d-flex gap-2 mb-3">
+                    <button type="submit" class="btn btn-dark">Send</button>
+                    <button type="button" class="btn btn-dark">Edit</button>
+                    <button type="button" class="btn btn-dark">Cancel</button>
+                </div>
+                <button type="button" class="btn btn-dark">Print</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="mt-5 text-center">
+    <nav class="nav justify-content-center mb-3">
+        <a href="/rent" class="nav-link">Rent</a>
+        <a href="/news" class="nav-link">Announcement</a>
+        <a href="/report" class="nav-link">Report</a>
+        <a href="/faq" class="nav-link">FAQ</a>
+    </nav>
+    <div class="mb-2">
+        <a href="#" class="me-2">Instagram</a>
+        <a href="#" class="me-2">Facebook</a>
+        <a href="#" class="me-2">Twitter</a>
+    </div>
+    <p class="text-muted">&copy; 2025 MyRent. All rights reserved.</p>
+    <div>
+        <a href="/privacy">Privacy Policy</a> |
+        <a href="/terms">Terms of Service</a>
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center">THIS IS ANNOUCEMENT PAGE FOR USER & ADMIN</h1>
+    
+    <div class="mb-4">
+        <span>Current Date: {{ current_date }}</span>
+        <span>Time: {{ current_time }}</span>
+        <p>Hi {{ user.firstName }}</p>
+    </div>
+
+    <h2 class="text-center mb-4">LATEST NEWS</h2>
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>System Maintenances</h3>
+                    <p>{{ latest_news.content }}</p>
+                    <button class="btn btn-dark">Print</button>
+                </div>
+                <div class="col-md-4">
+                    <div class="pdf-placeholder bg-secondary text-center p-5">
+                        NOTICE PDF FILE
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4">PREVIOUS NEWS</h2>
+    <div class="row">
+        {% for news in previous_news %}
+
+    <table class="table table-bordered">
+    <tbody>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="pdf-placeholder bg-secondary text-center p-5">
+                    NOTICE PDF FILE
+                </div>
+                <div class="card-body">
+                    <h5>{{ news.title }}</h5>
+                    <p>Date: {{ news.date }}</p>
+                    <p>{{ news.content }}</p>
+                    <a href="#" class="btn btn-link">Read more</a>
+                </div>
+                
+            </div>
+            <div class="card">
+                <div class="pdf-placeholder bg-secondary text-center p-5">
+                    NOTICE PDF FILE
+                </div>
+                <div class="card-body">
+                    <h5>{{ news.title }}</h5>
+                    <p>Date: {{ news.date }}</p>
+                    <p>{{ news.content }}</p>
+                    <a href="#" class="btn btn-link">Read more</a>
+                </div>
+                
+            </div>
+            <div class="card">
+                <div class="pdf-placeholder bg-secondary text-center p-5">
+                    NOTICE PDF FILE
+                </div>
+                <div class="card-body">
+                    <h5>{{ news.title }}</h5>
+                    <p>Date: {{ news.date }}</p>
+                    <p>{{ news.content }}</p>
+                    <a href="#" class="btn btn-link">Read more</a>
+                </div>
+                
+            </div>
+        </div>
+    </tbody>
+    </table>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
