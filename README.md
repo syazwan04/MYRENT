@@ -1,6 +1,3 @@
-# MYRENT
- FYP4025_1124
-Based on the files and information provided about MyRent, I'll craft an appropriate README section for your GitHub repository. A good README should explain what the project is, its key features, setup instructions, technologies used, and any other relevant information to help users understand and use your application.
 
 # MyRent
 
